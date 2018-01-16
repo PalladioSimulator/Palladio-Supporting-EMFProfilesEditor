@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="emfprofiles" version="12.0.0.2017041100">
+  <ownedViewpoints name="emfprofiles.viewpoint" label="EMF Profiles" modelFileExtension="emfprofile_diagram">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="emfprofiles.diagram" label="EMF Profiles" initialisation="true" domainClass="emfprofile::Profile" enablePopupBars="true">
+      <metamodel href="http://www.modelversioning.org/emfprofile/1.1#/"/>
+      <metamodel href="http://www.eclipse.org/emf/2002/Ecore#/"/>
+      <defaultLayer name="Default">
+        <edgeMappings name="EReference" labelDirectEdit="//@ownedViewpoints[name='emfprofiles.viewpoint']/@ownedRepresentations[name='emfprofiles.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Label%20edition']" sourceMapping="//@ownedViewpoints[name='emfprofiles.viewpoint']/@ownedRepresentations[name='emfprofiles.diagram']/@defaultLayer/@containerMappings[name='Stereotype']" targetMapping="//@ownedViewpoints[name='emfprofiles.viewpoint']/@ownedRepresentations[name='emfprofiles.diagram']/@defaultLayer/@containerMappings[name='EClass']" targetFinderExpression="aql:self.eReferenceType" sourceFinderExpression="feature:eContainer" domainClass="ecore::EReference" useDomainElement="true">
+          <style>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="aql:self.name + '[' + self.lowerBound +'..' + self.upperBound + ']'">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Extension" sourceMapping="//@ownedViewpoints[name='emfprofiles.viewpoint']/@ownedRepresentations[name='emfprofiles.diagram']/@defaultLayer/@containerMappings[name='Stereotype']" targetMapping="//@ownedViewpoints[name='emfprofiles.viewpoint']/@ownedRepresentations[name='emfprofiles.diagram']/@defaultLayer/@containerMappings[name='EClass']" targetFinderExpression="aql:self.target" sourceFinderExpression="feature:eContainer" domainClass="emfprofile::Extension" useDomainElement="true">
+          <style targetArrow="InputFillClosedArrow">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="Generalization" deletionDescription="//@ownedViewpoints[name='emfprofiles.viewpoint']/@ownedRepresentations[name='emfprofiles.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Generalization']" sourceMapping="//@ownedViewpoints[name='emfprofiles.viewpoint']/@ownedRepresentations[name='emfprofiles.diagram']/@defaultLayer/@containerMappings[name='Stereotype']" targetMapping="//@ownedViewpoints[name='emfprofiles.viewpoint']/@ownedRepresentations[name='emfprofiles.diagram']/@defaultLayer/@containerMappings[name='Stereotype']" targetFinderExpression="aql:self.eSuperTypes">
+          <style targetArrow="InputClosedArrow">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="Stereotype" labelDirectEdit="//@ownedViewpoints[name='emfprofiles.viewpoint']/@ownedRepresentations[name='emfprofiles.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Label%20edition']" semanticCandidatesExpression="aql:self.getStereotypes()" domainClass="emfprofile::Stereotype" childrenPresentation="List">
+          <subNodeMappings name="Tagged values" labelDirectEdit="//@ownedViewpoints[name='emfprofiles.viewpoint']/@ownedRepresentations[name='emfprofiles.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Label%20edition']" semanticCandidatesExpression="feature:eAttributes" domainClass="ecore::EAttribute">
+            <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="EClass" deletionDescription="//@ownedViewpoints[name='emfprofiles.viewpoint']/@ownedRepresentations[name='emfprofiles.diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='Delete%20EClass']" createElements="false" domainClass="ecore::EClass">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" heightComputationExpression="1" backgroundStyle="Liquid">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="General">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Stereotype" containerMappings="//@ownedViewpoints[name='emfprofiles.viewpoint']/@ownedRepresentations[name='emfprofiles.diagram']/@defaultLayer/@containerMappings[name='Stereotype']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="emfprofile::Stereotype" referenceName="eClassifiers">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:'Stereotype' + container.getStereotypes()->size()"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="eSuperTypes" valueExpression="aql:emfprofileapplication::StereotypeApplication"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Tagged Value" nodeMappings="//@ownedViewpoints[name='emfprofiles.viewpoint']/@ownedRepresentations[name='emfprofiles.diagram']/@defaultLayer/@containerMappings[name='Stereotype']/@subNodeMappings[name='Tagged%20values']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ecore::EAttribute" referenceName="eStructuralFeatures">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="taggedValue"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Extension" edgeMappings="//@ownedViewpoints[name='emfprofiles.viewpoint']/@ownedRepresentations[name='emfprofiles.diagram']/@defaultLayer/@edgeMappings[name='Extension']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="emfprofile::Extension" referenceName="extensions">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="var:source"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="var:target"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="EReference" edgeMappings="//@ownedViewpoints[name='emfprofiles.viewpoint']/@ownedRepresentations[name='emfprofiles.diagram']/@defaultLayer/@edgeMappings[name='EReference']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ecore::EReference" referenceName="eStructuralFeatures">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="eType" valueExpression="var:target"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="aql:target.name.toLower()"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Generelization" edgeMappings="//@ownedViewpoints[name='emfprofiles.viewpoint']/@ownedRepresentations[name='emfprofiles.diagram']/@defaultLayer/@edgeMappings[name='Generalization']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="eSuperTypes" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="Generalization">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="eSuperTypes" elementExpression="aql:elementView.targetNode.oclAsType(diagram::DDiagramElement).target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="Delete EClass">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:elementView">
+                <subModelOperations xsi:type="tool_1:DeleteView"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="Select EClass" candidatesExpression="aql:self.selectEPackage().oclAsType(ecore::EPackage).eClassifiers" multiple="true" message="Select the EClasses that should be displayed">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:For" expression="var:element">
+                <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='emfprofiles.viewpoint']/@ownedRepresentations[name='emfprofiles.diagram']/@defaultLayer/@containerMappings[name='EClass']" containerViewExpression="var:containerView"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ToolDescription" name="Load EClasses" precondition="aql:container.oclIsTypeOf(emfprofile::Profile)">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:For" expression="service:loadEClasses()">
+                <subModelOperations xsi:type="tool:CreateView" mapping="//@ownedViewpoints[name='emfprofiles.viewpoint']/@ownedRepresentations[name='emfprofiles.diagram']/@defaultLayer/@containerMappings[name='EClass']" containerViewExpression="var:elementView"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Label edition" inputLabelExpression="feature:name">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="emfprofiles.design.Services"/>
+  </ownedViewpoints>
+</description:Group>
