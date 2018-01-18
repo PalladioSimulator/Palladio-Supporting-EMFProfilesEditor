@@ -24,7 +24,6 @@ import org.modelversioning.emfprofile.Stereotype;
  * The services class used by VSM.
  */
 public class Services {
-    public static final Shell SHELL = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
     
 	public Services() {
 		
@@ -44,7 +43,8 @@ public class Services {
     
     public EPackage selectEPackage(EObject self) {
     	System.out.println("test ");
-        TargetPlatformPackageDialog classpathPackageDialog = new TargetPlatformPackageDialog(SHELL);
+    	Shell shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
+        TargetPlatformPackageDialog classpathPackageDialog = new TargetPlatformPackageDialog(shell);
         classpathPackageDialog.setMultipleSelection(false);
         EPackage result = null;
         if (classpathPackageDialog.open() == Dialog.OK) {
