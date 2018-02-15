@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="emfprofiles.buckminster"
+      label="EMF Profiles Buckminster"
+      version="1.0.0.qualifier">
+
+   <description url="https://github.com/kit-sdq/EMF-Profiles-Sirius-Editor">
+      This feature contains the buckminster build structure for the
+EMF-Profiles Sirius-based graphical editor.
+   </description>
+
+   <includes
+         id="emfprofiles.feature"
+         version="0.0.0"/>
+
+</feature>
