@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="emfprofiles.feature"
-      label="EMF Profiles Feature"
+      label="EMF Profiles Graphical Editor"
       version="1.0.1.qualifier">
 
-   <description url="http://www.example.com/description">
-      [Enter Feature Description here.]
+   <description url="https://github.com/kit-sdq/EMF-Profiles-Sirius-Editor">
+      This is a Sirius-based graphical editor for EMF Profiles. The goal of this graphical editor is to offer a more modern alternative to the default EMF Profiles GMF-based graphical editor, which hasn&apos;t been maintained for several years.
    </description>
 
-   <copyright url="http://www.example.com/copyright">
-      [Enter Copyright Description here.]
-   </copyright>
-
-   <license url="http://www.example.com/license">
-      [Enter License Description here.]
-   </license>
+   <url>
+      <discovery label="EMF Profiles article" url="https://modeling-languages.com/emf-profiles-annotation-mechanism-emf-models/"/>
+      <discovery label="EMF Profiles paper" url="http://www.modelversioning.org/images/amor/prototypes/EMFProfiles/emf_profiles_paper.pdf"/>
+      <discovery label="EMF Profiles fork" url="https://github.com/PalladioSimulator/emf-profiles"/>
+      <discovery label="EMF Profiles original repository" url="https://github.com/planger/emf-profiles"/>
+      <discovery label="EMF Profiles Google Code webpage" url="https://code.google.com/archive/a/eclipselabs.org/p/emf-profiles"/>
+      <discovery label="EMF Profiles fork update site" url="https://sdqweb.ipd.kit.edu/eclipse/emf-profiles/releases/latest"/>
+   </url>
 
    <requires>
       <import feature="org.modelversioning.emfprofile.feature" version="1.0.0.201710240840"/>
