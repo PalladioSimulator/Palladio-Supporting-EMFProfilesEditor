@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="org.modelversioning.emfprofile.category.wizards"
+            name="EMF Profiles">
+      </category>
+      <wizard
+            category="org.modelversioning.emfprofile.category.wizards"
+            class="emfprofiles.custom.wizards.EMFProfilesProjectWizard"
+            icon="icons/profile.png"
+            id="emfprofiles.custom.wizards.project"
+            name="EMF Profiles Project (Sirius)"
+            project="true">
+      </wizard>
+   </extension>
+
+</plugin>
