@@ -44,16 +44,12 @@
     </rm:provider>
   </rm:searchPath>
   
-    <rm:searchPath name="PalladioSiriusEditors">
-    <rm:provider componentTypes="eclipse.feature,osgi.bundle,buckminster" readerType="git">
-      <rm:property key="git.remote.uri" value="https://github.com/PalladioSimulator/Palladio-Editors-Sirius"/>
-      <rm:property key="git.auto.fetch" value="true"/>
-      <rm:uri format="{0}/GIT,{1}">
-        <bc:propertyRef key="workspace.root"/>
-        <bc:propertyRef key="buckminster.component"/>
-      </rm:uri>
+  <rm:searchPath name="PalladioSiriusEditors">
+    <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false">
+      <rm:property key="buckminster.source" value="false"/>
+      <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/palladio/editors/sirius/releases/latest/"/>
     </rm:provider>
-  </rm:searchPath>
   
 
   <rm:searchPath name="platform">
