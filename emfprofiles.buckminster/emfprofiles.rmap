@@ -3,18 +3,10 @@
   <rm:locator pattern="^org\.eclipse*" searchPathRef="platform" failOnError="false"/>
   <rm:locator pattern="^emfprofiles*" searchPathRef="EMFProfilesEditor"/>
   <rm:locator pattern="^org\.eclipse\.sirius*" searchPathRef="SiriusRuntime"/>
-  <rm:locator pattern="^org\.modelversioning\.emfprofile*" searchPathRef="EMFProfiles"/>
   <rm:locator pattern="^org\.eclipse*" searchPathRef="oxygen" failOnError="false"/>
-  <rm:locator pattern="^org\.palladiosimulator\.editors\.sirius*" searchPathRef="PalladioSiriusEditors" failOnError="false"/>
-  <rm:locator pattern="^org\.palladiosimulator\.editors\.commons*" searchPathRef="PalladioEditorsCommons" failOnError="false"/>
-  <rm:locator pattern="^org\.palladiosimulator\.architecturaltemplates*" searchPathRef="ArchitecturalTemplates" failOnError="false"/>
-  <rm:locator pattern="^org\.palladiosimulator\.commons*" searchPathRef="PalladioCommons" failOnError="false"/>
-  <rm:locator pattern="^de\.uka\.ipd\.sdq*" searchPathRef="PalladioCommons" failOnError="false"/>
-  <rm:locator pattern="^org\.palladiosimulator\.pcm*" searchPathRef="PCM" failOnError="false"/>
-  <rm:locator pattern="^de\.uka\.ipd\.sdq*" searchPathRef="PCM" failOnError="false"/>
-  <rm:locator pattern="^org\.palladiosimulator\.mdsdprofiles*" searchPathRef="MDSDProfiles" failOnError="false"/>
+  <rm:locator searchPathRef="PalladioSimulator"/>
   <rm:locator searchPathRef="orbit"/>
-  <rm:searchPath name="EMFProfilesEditor">
+    <rm:searchPath name="EMFProfilesEditor">
     <rm:provider componentTypes="eclipse.feature,osgi.bundle,buckminster" readerType="git">
       <rm:property key="git.remote.uri" value="https://github.com/kit-sdq/EMF-Profiles-Sirius-Editor"/>
       <rm:property key="git.auto.fetch" value="true"/>
@@ -36,55 +28,6 @@
       <rm:uri format="http://download.eclipse.org/sirius/updates/releases/5.0.2/neon/"/>
     </rm:provider>
   </rm:searchPath>
-  <rm:searchPath name="EMFProfiles">
-    <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false">
-      <rm:property key="buckminster.source" value="false"/>
-      <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/emf-profiles/releases/latest/"/>
-    </rm:provider>
-  </rm:searchPath>
-  <rm:searchPath name="PCM">
-    <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false">
-      <rm:property key="buckminster.source" value="false"/>
-      <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/palladio/pcm/releases/latest/"/>
-    </rm:provider>
-  </rm:searchPath>
-  <rm:searchPath name="MDSDProfiles">
-    <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false">
-      <rm:property key="buckminster.source" value="false"/>
-      <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/mdsdprofiles/releases/latest/"/>
-    </rm:provider>
-  </rm:searchPath>
-  <rm:searchPath name="PalladioSiriusEditors">
-    <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false">
-      <rm:property key="buckminster.source" value="false"/>
-      <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/palladio/editors/sirius/releases/latest/"/>
-    </rm:provider>
-  </rm:searchPath>
-  <rm:searchPath name="PalladioEditorsCommons">
-    <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false">
-      <rm:property key="buckminster.source" value="false"/>
-      <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/palladio/editors/commons/releases/latest/"/>
-    </rm:provider>
-  </rm:searchPath>
-  <rm:searchPath name="ArchitecturalTemplates">
-    <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false">
-      <rm:property key="buckminster.source" value="false"/>
-      <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/architecturaltemplates/releases/latest/"/>
-    </rm:provider>
-  </rm:searchPath>
-    <rm:searchPath name="PalladioCommons">
-    <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false">
-      <rm:property key="buckminster.source" value="false"/>
-      <rm:property key="buckminster.mutable" value="false"/>
-      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/commons/releases/latest/"/>
-    </rm:provider>
-  </rm:searchPath>
   <rm:searchPath name="platform">
     <rm:provider componentTypes="osgi.bundle,eclipse.feature" readerType="p2" source="false" mutable="false">
       <rm:property key="buckminster.source" value="false"/>
@@ -97,6 +40,13 @@
       <rm:property key="buckminster.source" value="false"/>
       <rm:property key="buckminster.mutable" value="false"/>
       <rm:uri format="http://download.eclipse.org/releases/oxygen"/>
+    </rm:provider>
+  </rm:searchPath>
+    <rm:searchPath name="PalladioSimulator">
+    <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false">
+      <rm:property key="buckminster.source" value="false"/>
+      <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/palladiosimulator/releases/latest/"/>
     </rm:provider>
   </rm:searchPath>
   <rm:searchPath name="orbit">
