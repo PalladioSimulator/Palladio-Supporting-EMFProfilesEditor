@@ -50,6 +50,7 @@
       <rm:property key="buckminster.mutable" value="false"/>
       <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/palladio/editors/sirius/releases/latest/"/>
     </rm:provider>
+  </rm:searchPath>
   
 
   <rm:searchPath name="platform">
