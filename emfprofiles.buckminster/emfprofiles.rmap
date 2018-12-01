@@ -6,6 +6,7 @@
   <rm:locator pattern="^org\.modelversioning\.emfprofile*" searchPathRef="EMFProfiles"/>
   <rm:locator pattern="^org\.eclipse*" searchPathRef="oxygen" failOnError="false"/>
   <rm:locator pattern="^org\.palladiosimulator\.editors\.sirius*" searchPathRef="PalladioSiriusEditors" failOnError="false"/>
+  <rm:locator pattern="^org\.palladiosimulator\.editors\.commons*" searchPathRef="PalladioEditorsCommons" failOnError="false"/>
   <rm:locator pattern="^org\.palladiosimulator\.architecturaltemplates*" searchPathRef="ArchitecturalTemplates" failOnError="false"/>
   <rm:locator pattern="^org\.palladiosimulator\.commons*" searchPathRef="PalladioCommons" failOnError="false"/>
   <rm:locator pattern="^de\.uka\.ipd\.sdq*" searchPathRef="PalladioCommons" failOnError="false"/>
@@ -44,6 +45,13 @@
       <rm:property key="buckminster.source" value="false"/>
       <rm:property key="buckminster.mutable" value="false"/>
       <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/palladio/editors/sirius/releases/latest/"/>
+    </rm:provider>
+  </rm:searchPath>
+  <rm:searchPath name="PalladioEditorsCommons">
+    <rm:provider componentTypes="eclipse.feature,osgi.bundle" readerType="p2" source="false" mutable="false">
+      <rm:property key="buckminster.source" value="false"/>
+      <rm:property key="buckminster.mutable" value="false"/>
+      <rm:uri format="https://sdqweb.ipd.kit.edu/eclipse/palladio/editors/commons/releases/latest/"/>
     </rm:provider>
   </rm:searchPath>
   <rm:searchPath name="ArchitecturalTemplates">
