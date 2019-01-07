@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="emfprofiles.buckminster"
-      label="EMF Profiles Buckminster"
+      label="EMF Profiles Sirius Editor"
       version="1.0.0.qualifier">
 
    <description url="https://github.com/kit-sdq/EMF-Profiles-Sirius-Editor">
@@ -10,8 +10,7 @@ goal of this graphical editor is to offer a more modern alternative
 to the default EMF Profiles GMF-based graphical editor, which
 hasn&apos;t been maintained for several years.
    </description>
-   
-   
+
    <url>
       <discovery label="EMF Profiles article" url="https://modeling-languages.com/emf-profiles-annotation-mechanism-emf-models/"/>
       <discovery label="EMF Profiles paper" url="http://www.modelversioning.org/images/amor/prototypes/EMFProfiles/emf_profiles_paper.pdf"/>
