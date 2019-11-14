@@ -2,7 +2,7 @@
 <feature
       id="emfprofiles.feature"
       label="EMF Profiles Graphical Editor"
-      version="1.0.1.qualifier">
+      version="4.2.0.qualifier">
 
    <description url="https://github.com/kit-sdq/EMF-Profiles-Sirius-Editor">
       This is a Sirius-based graphical editor for EMF Profiles. The goal of this graphical editor is to offer a more modern alternative to the default EMF Profiles GMF-based graphical editor, which hasn&apos;t been maintained for several years.
