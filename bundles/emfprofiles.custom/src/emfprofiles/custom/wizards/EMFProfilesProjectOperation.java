@@ -20,6 +20,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.SubMonitor;
 import org.eclipse.emf.common.command.BasicCommandStack;
 import org.eclipse.emf.common.util.TreeIterator;
@@ -38,6 +39,8 @@ import org.modelversioning.emfprofile.diagram.part.EMFProfileDiagramEditorUtil;
 import org.modelversioning.emfprofile.project.EMFProfileProjectNature;
 import org.modelversioning.emfprofile.project.EMFProfileProjectNatureUtil;
 import org.modelversioning.emfprofile.project.ui.wizard.ProfileProjectData;
+
+import emfprofiles.custom.Activator;
 
 public class EMFProfilesProjectOperation extends WorkspaceModifyOperation {
 
@@ -86,18 +89,15 @@ public class EMFProfilesProjectOperation extends WorkspaceModifyOperation {
 
         subMonitor.worked(1);
         projectData.getProjectHandle().refreshLocal(IResource.DEPTH_INFINITE, new NullProgressMonitor());
-
-//        subMonitor.subTask("Opening representation");
-//        openRepresentation();
-//        subMonitor.worked(1);
-
     }
 
     private void setUpModelingProject() throws CoreException {
         ModelingProjectManager.INSTANCE.convertToModelingProject(projectData.getProjectHandle(),
                 new NullProgressMonitor());
 
-        final URI representationsURI = ViewPointUtil.getRepresentationsURI(projectData.getProjectHandle());
+        final URI representationsURI = ViewPointUtil.getRepresentationsURI(projectData.getProjectHandle())
+                .orElseThrow(() -> new CoreException(
+                        new Status(Status.ERROR, Activator.PLUGIN_ID, "The representation URI could not be found.")));
         final Session session = SessionManager.INSTANCE.getSession(representationsURI, new NullProgressMonitor());
         List<String> viewpointNames = new ArrayList<String>();
         viewpointNames.add(VIEWPOINT_NAME);

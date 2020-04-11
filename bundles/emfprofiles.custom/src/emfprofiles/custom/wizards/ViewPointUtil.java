@@ -13,7 +13,6 @@ import org.eclipse.sirius.business.api.componentization.ViewpointRegistry;
 import org.eclipse.sirius.business.api.helper.SiriusUtil;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.ui.business.api.session.UserSession;
-import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
 import org.eclipse.sirius.viewpoint.description.Viewpoint;
 
 public final class ViewPointUtil {
@@ -22,29 +21,12 @@ public final class ViewPointUtil {
         // intentionally left blank
     }
 
-    public static Viewpoint getSelectedViewpointByName(Session session, String viewpointName) {
-        return session.getSelectedViewpoints(false)
-                .stream()
-                .filter(v -> viewpointName.equals(v.getName()))
-                .findAny()
-                .orElse(null);
-    }
-
-    public static RepresentationDescription findDescription(Viewpoint viewpoint, String descriptionName) {
-        return viewpoint.getOwnedRepresentations()
-                .stream()
-                .filter(d -> descriptionName.equals(d.getName()))
-                .findAny()
-                .orElse(null);
-    }
-
-    public static URI getRepresentationsURI(IProject project) {
+    public static Optional<URI> getRepresentationsURI(IProject project) {
         final IResource representationResource = project.findMember("representations." + SiriusUtil.SESSION_RESOURCE_EXTENSION);
         return Optional.ofNullable(representationResource)
                 .map(IResource::getFullPath)
                 .map(IPath::toString)
-                .map(p -> URI.createPlatformResourceURI(p, true))
-                .orElse(null);
+                .map(p -> URI.createPlatformResourceURI(p, true));
     }
 
     public static void selectViewpointsByName(Session session, Collection<String> viewpointNames, boolean createRepresentation,
