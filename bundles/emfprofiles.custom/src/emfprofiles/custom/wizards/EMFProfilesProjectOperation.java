@@ -9,7 +9,6 @@ import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.core.resources.IFile;
@@ -30,29 +29,21 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.emf.transaction.util.TransactionUtil;
-import org.eclipse.jdt.core.JavaModelException;
-import org.eclipse.sirius.business.api.dialect.DialectManager;
 import org.eclipse.sirius.business.api.session.Session;
 import org.eclipse.sirius.business.api.session.SessionManager;
-import org.eclipse.sirius.ui.business.api.dialect.DialectUIManager;
 import org.eclipse.sirius.ui.tools.api.project.ModelingProjectManager;
-import org.eclipse.sirius.viewpoint.DRepresentation;
-import org.eclipse.sirius.viewpoint.description.RepresentationDescription;
-import org.eclipse.sirius.viewpoint.description.Viewpoint;
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.modelversioning.emfprofile.Profile;
 import org.modelversioning.emfprofile.diagram.part.EMFProfileDiagramEditorUtil;
 import org.modelversioning.emfprofile.project.EMFProfileProjectNature;
 import org.modelversioning.emfprofile.project.EMFProfileProjectNatureUtil;
 import org.modelversioning.emfprofile.project.ui.wizard.ProfileProjectData;
-import org.palladiosimulator.editors.sirius.custom.util.SiriusCustomUtil;
 
 public class EMFProfilesProjectOperation extends WorkspaceModifyOperation {
 
 	private static final String BUILD_PROP_FILE_NAME = "build.properties";
 	private static final String PDE_PLUGIN_NATURE = "org.eclipse.pde.PluginNature";
     private static final String VIEWPOINT_NAME = "emfprofiles.viewpoint";
-    private static final String REPRESENTATION_DESCRIPTION_NAME = "emfprofiles.diagram";
 
 	private ProfileProjectData projectData;
 	private IProject project;
@@ -103,24 +94,14 @@ public class EMFProfilesProjectOperation extends WorkspaceModifyOperation {
 
 	}
 
-    private void openRepresentation() {
-        Session session = SessionManager.INSTANCE.getSession(profileDiagramResource);
-        Viewpoint viewpoint = SiriusCustomUtil.getSelectedViewpointByName(session, VIEWPOINT_NAME);
-        RepresentationDescription representationDescription = SiriusCustomUtil.findDescription(viewpoint, REPRESENTATION_DESCRIPTION_NAME);
-        
-        Collection<DRepresentation> representations = DialectManager.INSTANCE.getRepresentations(representationDescription, session);
-        if (! representations.isEmpty())
-            DialectUIManager.INSTANCE.openEditor(session, representations.iterator().next(), new NullProgressMonitor());
-    }
-
     private void setUpModelingProject() throws CoreException {
         ModelingProjectManager.INSTANCE.convertToModelingProject(projectData.getProjectHandle(), new NullProgressMonitor());
         
-        final URI representationsURI = SiriusCustomUtil.getRepresentationsURI(projectData.getProjectHandle());
+        final URI representationsURI = ViewPointUtil.getRepresentationsURI(projectData.getProjectHandle());
         final Session session = SessionManager.INSTANCE.getSession(representationsURI, new NullProgressMonitor());
         List<String> viewpointNames = new ArrayList<String>();
         viewpointNames.add(VIEWPOINT_NAME);
-        SiriusCustomUtil.selectViewpoints(session, viewpointNames, true, new NullProgressMonitor());
+        ViewPointUtil.selectViewpointsByName(session, viewpointNames, true, new NullProgressMonitor());
     }
 
 	private void createProject(IProgressMonitor monitor)
@@ -199,7 +180,7 @@ public class EMFProfilesProjectOperation extends WorkspaceModifyOperation {
 	}
 
 	protected void createContents(IProgressMonitor monitor)
-			throws CoreException, JavaModelException,
+			throws CoreException,
 			InvocationTargetException, InterruptedException {
 		try {
 			createProfile(monitor, project);
