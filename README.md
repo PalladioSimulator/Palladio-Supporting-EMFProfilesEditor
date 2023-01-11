@@ -4,6 +4,9 @@ A sirius-based editor for the definition of EMF Profiles. It was created, as the
 ## Documentation
 For comprehensive documentation, please visit our [wiki page](https://sdqweb.ipd.kit.edu/wiki/EMF_Profile_Definition).
 
+### Workaround for missing profile application in edtiors
+If applications do not become visible in the editor, please try [this](https://github.com/PalladioSimulator/Palladio-Addons-DataFlowConfidentiality-Analysis/issues/35#issuecomment-1378762708)
+
 ## Support
 For support
 * visit our [issue tracking system](https://palladio-simulator.com/jira)
