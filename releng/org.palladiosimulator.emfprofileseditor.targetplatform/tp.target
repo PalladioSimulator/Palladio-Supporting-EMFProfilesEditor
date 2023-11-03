@@ -7,7 +7,7 @@
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="true" includeMode="planner" includeSource="false" type="InstallableUnit" filter="nightly" refresh="true">
 <unit id="org.modelversioning.emfprofile.feature.feature.group" version="tbd"/>
-<repository location="https://updatesite.palladio-simulator.com/palladio-thirdparty-emfprofiles/nightly/"/>
+<repository location="https://updatesite.palladio-simulator.com/palladio-thirdparty-emfprofiles/branches/testingDay5.2.0/"/>
 </location>
 </locations>
 </target>
